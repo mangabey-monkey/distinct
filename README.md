@@ -38,7 +38,7 @@ Write a query and run it. If you like it, save it in your VSCode project.
 - Set the values of the parameters in parameters panel.
 - Use the python package `...` run parameterised queries in your python scripts or jupyter notebooks
 
-  ![](media/readme/python_run_query.png)
+    ![](media/readme/python_run_query.png)
 
 ## Data view
 
@@ -48,7 +48,7 @@ View you results
 - Export to CSV, xlsx, and Google Sheets
 - Clean view of arrays and structs.
 
-  ![](media/readme/array_design.gif)
+    ![](media/readme/array_design.gif)
 
 ## Quick and beautiful charts
 
