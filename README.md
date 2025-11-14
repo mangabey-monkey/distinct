@@ -93,3 +93,9 @@ If you are having trouble with code completions or running queries, the reason c
 ## Coming: share AI knowledge across team
 
 When your agent learns stuff about the data, you set up so that is shared within your team.
+
+## Telemetry
+
+This extension collects anonymous usage data to help improve the product. All telemetry respects VS Code's telemetry settings and follows best practices. We never collect personally identifiable information (PII), SQL query content, or file paths.
+
+For detailed information about what data we collect, see [TELEMETRY.md](TELEMETRY.md).
