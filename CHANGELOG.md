@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is automatically generated during releases based on git history and changes.
 
+## [0.2.17] - 2025-11-16
+
+### Changed
+
+- Updated Google Drive authentication to use OAuth credentials from environment variables
+- Reduced Google Drive API scopes to only require drive.file access
+- Enhanced build process to inject Google API OAuth credentials at build time
+
 ## [0.2.16] - 2025-11-16
 
 ### Changed
