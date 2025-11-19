@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is automatically generated during releases based on git history and changes.
 
+## [0.3.3] - 2025-11-19
+
+### Added
+
+- Add a getting started page.
+
+### Fixed
+
+- Bug with download schema UI.
+
 ## [0.3.2] - 2025-11-16
 
 ### Fixed
