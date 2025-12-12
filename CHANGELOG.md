@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is automatically generated during releases based on git history and changes.
 
+## [0.4.4] - 2025-12-12
+
+### Changed
+
+Version bump of better-sqlite3 to support new node version in VSCode (140).
+
 ## [0.4.3] - 2025-11-25
 
 ### Fixed
