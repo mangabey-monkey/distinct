@@ -5,7 +5,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-This changelog is automatically generated during releases based on git history and changes.
+## [0.5.0] - 2026-02-08
+
+### Important notice
+
+**This release uses a new local backend and data format. Updating to 0.5.0 will reset any settings and saved knowledge you have stored locally.** You will need to reconfigure the extension and re-run indexing if you rely on extracted knowledge.
+
+### Breaking changes
+
+- **Backend replaced:** Prisma/SQLite has been removed in favor of PocketBase. All local data (settings, knowledge, chat state, schema cache) is stored in a new format. Existing local data is not migrated.
+- **Snowflake removed:** The extension now supports BigQuery only. Snowflake has been removed from the UI and configuration. See `docs/re-enable-snowflake-support.md` in the repo if you need to re-enable it.
+- **Workspace required:** The extension only activates when a workspace folder is open (MAN-257). If you open VS Code without a folder, the extension will not run until you open a folder.
+
+### Added
+
+- **PocketBase backend:** New embedded PocketBase server for local storage, with migrations and multi-window support. Auth and subscription state are now stored in PocketBase (MAN-258, MAN-251).
+- **Vertex AI:** Optional Vertex AI as an alternative AI provider alongside the existing GenAI provider. Configurable via settings and FTUE.
+- **First-time user experience (FTUE):** Guided setup flow, setup-complete page, and improved loading of projects/datasets during onboarding.
+- **Table sample settings:** Configurable default row limit and staleness for table sampling (e.g. 250M rows). New `distinct.tableSample.*` options and improved query rewriting (MAN-177).
+- **Schema sync:** Schema is synced in the background via `SchemaSyncService`; previous "download" flow has been replaced with sync-based updates.
+- **Structured knowledge:** Grain, main date, and column statistics for tables; "live" knowledge updates; label-based knowledge removed in favor of structured fields.
+- **Chat and indexing refactor:** Agent sessions, indexation progress in chat, and refactored AI chat navigation and view handler initialization.
+- **Test connection:** Data warehouse and Vertex AI connection tests from setup/settings.
+- **Google Drive:** Command to invalidate Google Drive credentials.
+- **Light mode and themes:** Data view and UI improvements for light mode and other color schemes (MAN-205, MAN-245).
+- **Misc:** File references in chat (MAN-181, MAN-244), chart panel design fix (MAN-232), data tab overflow fix (MAN-247), improved Python Language Server init and error handling.
+
+### Changed
+
+- **Auth and uptime:** PocketBase auth and subscription handling rewritten for correctness and reliability (MAN-258, MAN-251). PocketBase migrations run automatically, including on first run and with multi-window support (MAN-233, #225, #227).
+- **Settings:** Extension and frontend-available settings are stored in PocketBase and synced via `SettingsSyncerService`.
+- **Chat:** New chat design, message formatters (user/assistant/tool), and improved credential error handling and client invalidation.
+- **Telemetry:** Indexation error context no longer includes `tableId`; LLM telemetry restricted to development.
+- **Build and tooling:** Prettier and ESLint added; type generation and formatting updated. Release workflows updated (e.g. POCKETBASE_STORAGE_BUCKET, pr-to-production).
+
+### Removed
+
+- **Prisma:** All Prisma dependencies, schema, and migrations removed. Local data is now managed by PocketBase.
+- **Snowflake:** Snowflake support removed from the extension (BigQuery only). Backend code remains for potential re-enable (see docs).
+- **Knowledge labels:** Label-based knowledge removed in favor of structured knowledge fields.
 
 ## [0.4.4] - 2025-12-12
 

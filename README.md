@@ -1,4 +1,4 @@
-# DISTINCT: BigQuery and Snowflake
+# DISTINCT: BigQuery
 
 > AI query coding agent with deep knowledge about your specific data warehouse which speeds up every data extraction and analysis.
 
