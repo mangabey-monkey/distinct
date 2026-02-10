@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2026-02-11
+
+### Added
+
+- **PocketBase hooks and server lifecycle:** PocketBase hooks for lifecycle and context-aware discovery; enhanced server listener management and lifecycle handling (#239). Documentation and diagrams for PocketBase lifecycle; test script for listener lifecycle.
+
+### Changed
+
+- **PocketBase server:** Refactored `pocketbaseServer.ts` for clearer listener management and hook integration. Esbuild updated for PocketBase hook build. BaseViewHandler minor adjustments for lifecycle.
+
 ## [0.5.0] - 2026-02-08
 
 ### Important notice
