@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.3] - 2026-03-07
+
+### Fixed
+
+- **PocketBase server:** Correct port conflict detection when multiple editor instances run; binds to 127.0.0.1 (same as PocketBase) to avoid IPv4 vs IPv6 false "free" reports; verifies server dataDir after spawn and retries with a different port if another instance's server is bound.
+
 ## [0.6.2] - 2026-03-07
 
 ### Changed
