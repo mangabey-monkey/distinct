@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.1] - 2026-03-07
+
+### Fixed
+
+- **Learn agent prompts:** Expanded learn system prompt and fixed learn first-user message and write_knowledge tool description. Resolved race condition and parsing in base agent (#269).
+
+## [0.6.0] - 2026-03-07
+
+### Added
+
+- **Semantic search with LanceDB:** Embedding-based search for chat messages, workspace files (.py, .sql), knowledge, and stored queries. LanceDB tables and sync with PocketBase; workspace file indexing runs automatically at extension start when AI connection is available.
+- **Learn agent and task subagents:** Dedicated “learn” agent toolset (read-only plus writeKnowledge) and a task tool that launches explore/validate subagents with persisted state for multi-step analysis and query validation.
+- **Chat insights and reference tools:** `getChatInsights` tool to extract insights from a chat; `grepReferences` and enhanced reference search for code/table references; improved chat and knowledge search parameters.
+- **Knowledge Manager UI:** Dedicated Knowledge Manager subpage on the home screen with list, filters, entity picker, and create/edit/delete for knowledge items; edit-knowledge design fixes and general context input improvements.
+- **AI query security checks:** RunQueryTool and Python Language Server enforce AI accessibility and TABLESAMPLE rules before executing queries; validation subagent supports structured checks and assumptions parsing.
+- **Run-query abort:** Ability to cancel a running query from the RunQueryTool.
+- **Agent lib and tool refactor:** Shared agent/tool logic in `src/lib` (tools, agents, prompts); tool renames (e.g. query → run_query), consolidated tool set and message formatters; GrepTableNames and related tools integrated into chat.
+- **Project settings in FTUE:** Project-related settings surfaced in the first-time user experience flow.
+- **BigQuery sync fix:** Table sync now correctly handles table names containing spaces.
+
+### Changed
+
+- **Chat and UI:** Refactored chat message handling and tool execution; improved message sorting and thought signature for last assistant message; various AI chat and home/settings UI fixes (icons, cards, Schema Explorer, Settings layout).
+- **PocketBase and tooling:** ClientResponseError used for 404 checks in PocketBase prompts; environment and build updates; removal of deprecated TaskTool/NoOpMessageEmitter and obsolete plan docs.
+
 ## [0.5.1] - 2026-02-11
 
 ### Added

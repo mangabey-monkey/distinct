@@ -52,15 +52,15 @@ Tracks extension lifecycle and component health. Helps us understand startup suc
 
 Tracks when features complete (success or failure). Helps us understand which features are used and their performance.
 
-| Feature             | What We Track                                                                               |
-| ------------------- | ------------------------------------------------------------------------------------------- |
-| **Query Execution** | Duration, success/failure, character count of SQL, row count returned, parameter count used |
-| **Schema Sync**     | Duration, success/failure, count of tables synced                                           |
-| **Export**          | Format type (csv/excel/googlesheets), row count, column count                               |
-| **AI Indexing**     | Duration, success/failure                                                                   |
-| **LLM Generation**  | Model name (e.g., "gpt-4o"), token counts, duration. **Not** the prompt or response content |
-| **Tool Calls**      | Tool name (e.g., "queryTool"), duration, success/failure. **Not** the arguments or results  |
-| **Connection Test** | Success/failure, which settings were configured (as booleans like `hasProjectId: true`)     |
+| Feature             | What We Track                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| **Query Execution** | Duration, success/failure, character count of SQL, row count returned, parameter count used       |
+| **Schema Sync**     | Duration, success/failure, count of tables synced                                                 |
+| **Export**          | Format type (csv/excel/googlesheets), row count, column count                                     |
+| **AI Indexing**     | Duration, success/failure                                                                         |
+| **LLM Generation**  | Model name (e.g., "gemini-3-pro"), token counts, duration. **Not** the prompt or response content |
+| **Tool Calls**      | Tool name (e.g., "queryTool"), duration, success/failure. **Not** the arguments or results        |
+| **Connection Test** | Success/failure, which settings were configured (as booleans like `hasProjectId: true`)           |
 
 **Never includes:** Actual SQL text, query results, table names, error details with data, AI prompts or responses, tool arguments
 
@@ -106,12 +106,12 @@ All errors pass through a sanitization layer before being logged. The raw error 
 
 All events automatically include these common properties:
 
-| Property          | Description                                                            |
-| ----------------- | ---------------------------------------------------------------------- |
-| `warehouseType`   | Type of data warehouse (e.g., "BigQuery", "Snowflake")                 |
-| `sessionId`       | Random UUID generated at extension startup                              |
-| `debug`           | Set to "true" when running in development mode                         |
-| `clientTimestamp` | When the event occurred                                                |
+| Property          | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| `warehouseType`   | Type of data warehouse (e.g., "BigQuery", "Snowflake") |
+| `sessionId`       | Random UUID generated at extension startup             |
+| `debug`           | Set to "true" when running in development mode         |
+| `clientTimestamp` | When the event occurred                                |
 
 ## Correlation IDs
 

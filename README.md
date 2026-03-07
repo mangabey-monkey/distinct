@@ -122,3 +122,7 @@ _DISTINCT_ is designed with privacy in mind. All your data, query results, and A
 This extension collects anonymous usage data to help improve the product. All telemetry respects VS Code's telemetry settings and follows industry best practices. We never collect personally identifiable information (PII), SQL query content, or file paths.
 
 For detailed information about data collection, see [TELEMETRY.md](TELEMETRY.md).
+
+## AI Model Configuration
+
+Advanced users can override which AI models are used for chat, indexing, query generation, and other features. For configuration options and local override instructions, see [MODEL_CONFIG.md](MODEL_CONFIG.md).
