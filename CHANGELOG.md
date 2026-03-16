@@ -5,6 +5,47 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.6] - 2026-03-16
+
+### Fixed
+
+- **App icons:** Corrected app icon display.
+- **AI chat run_query tool:** Query results now render properly in AI chat tool messages (#303).
+
+## [0.6.5] - 2026-03-16
+
+### Added
+
+- **Tauri desktop app:** Native desktop app support with OAuth and deep linking (#299).
+- **Web app:** New web application with basic agent, MCP implementation, and accessibility (#274, #275, #276, #277, #278, #279, #280, #281).
+- **Extension knowledge manager:** Knowledge manager UI in the extension (#298).
+- **Permissions management:** Improved table access and permissions view (#300).
+- **Parameters in queries:** Support for parameters in SQL queries (#282).
+- **Dataset sync toggle:** Ability to toggle which datasets to sync (#288).
+- **Knowledge view in table info:** Basic knowledge view in table info panel (#287).
+- **Streaming reasoning:** Streaming reasoning in agent responses (#295).
+- **Clarifying questions:** Agent can ask clarifying questions (#283).
+- **Firebase and backend:** Firebase integration and backend updates (#290).
+- **Present date:** Present date handling (#289).
+
+### Changed
+
+- **Redesign:** UI redesign (#296).
+- **Design fixes:** Color and layout improvements (#297).
+- **Query handling:** Refactored to use SafeQueryService (#292, #294).
+- **Indexation:** Migrated to new agent system (#286).
+- **Prompts:** Updated prompts and questions (#285).
+- **MCP:** Refactored MCP API responses and error handling.
+- **Project structure:** Renamed "knowledge-api" to "backend".
+
+### Fixed
+
+- **Indexation agent:** Fixed user messages in indexation agent.
+- **Agent:** Fixed error handling (#284).
+- **MCP:** Various MCP fixes.
+- **Tool descriptions:** Fixed tool description (#291).
+- **Review:** Improved review flow (#293).
+
 ## [0.6.4] - 2026-03-07
 
 ### Fixed
