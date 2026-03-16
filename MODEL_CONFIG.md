@@ -61,6 +61,7 @@ Distinct reads AI model selection from a JSON object with this exact top-level s
 - `learnAgent`: Model used for Learn mode (researching and formalizing data warehouse knowledge). Can differ from `chatAgent` if you want a lighter or different model for learn tasks.
 - `connectionTest`: Model used when the user tests their AI connection (e.g. in Settings). Use a lightweight model like `gemini-2.0-flash-lite`.
 - `embedding`: Model used for vector embeddings (LanceDB, semantic search). Must output 768 dimensions (e.g. `gemini-embedding-001`).
+- `reviewEnrichment`: Model used by the **web app** when enriching a review request (annotating SQL and generating analysis summary). Falls back to `chatAgent` if missing.
 
 ## Firebase Remote Config
 
@@ -149,3 +150,25 @@ The remote config supplies all other keys. If there is no remote config, the loc
 | Linux   | `~/.config/Code/User/globalStorage/Mangabey.distinct/`                       | `~/.config/Cursor/User/globalStorage/Mangabey.distinct/`                    |
 
 **How to find it from the editor:** Command Palette → **Developer: Open User Data Folder**, then navigate to `User/globalStorage/Mangabey.distinct/`. The full path to the override file is `.../globalStorage/Mangabey.distinct/model_config.json`.
+
+## Web Backend (Python)
+
+The web backend (Knowledge API) reads from Firebase Remote Config for:
+
+- `genai.reviewEnrichment` — review request enrichment (annotated SQL, analysis summary)
+
+Falls back to `genai.chatAgent` if the key is missing, then to a hardcoded default (`gemini-3-pro-preview`).
+
+**Requirements:** Set `FIREBASE_APP_ID` in the backend environment (or `.env`). Use the same value as the VS Code extension. The backend also needs `FIREBASE_PROJECT_ID` and `FIREBASE_API_KEY`. When `FIREBASE_APP_ID` is unset, the backend skips the fetch and uses hardcoded defaults.
+
+**How to update the remote config:** See [Firebase Remote Config](#firebase-remote-config) above. Add `reviewEnrichment` under `genai` in the `model_config` parameter. Example:
+
+```json
+{
+  "genai": {
+    "chatAgent": "gemini-2.5-pro",
+    "reviewEnrichment": "gemini-2.5-flash",
+    ...
+  }
+}
+```
