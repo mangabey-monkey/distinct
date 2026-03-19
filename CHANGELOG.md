@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.10] - 2026-03-19
+
+### Added
+
+- **Indexation:** Internal indexation migration plan documentation.
+
+### Changed
+
+- **Telemetry:** Telemetry configuration and analytics initialization improvements.
+- **Icons:** MCP and app icon updates.
+- **Agent logging:** Clearer agent logging (#313).
+- **Knowledge:** Clearer guidance for write-knowledge behavior (#312).
+- **Query sampling:** Size limits use a bytes-based approach instead of `TABLESAMPLE` (#315).
+
+### Fixed
+
+- **Indexation:** Indexation fixes (#314).
+- Miscellaneous small fixes (#316).
+
 ## [0.6.9] - 2026-03-16
 
 ### Added
